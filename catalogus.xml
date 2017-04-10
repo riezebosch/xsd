@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalogus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="demo-schema.xsd">
+<catalogus xmlns="urn:infosupport-com:xsd:boek-demo" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="urn:infosupport-com:xsd:boek-demo demo-schema.xsd">
 	<boek isbn="978-1-119-09660-3">
 		<titel>Professional C# 6 and .NET Core 1.0</titel>
 	</boek>

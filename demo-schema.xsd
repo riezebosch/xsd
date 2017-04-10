@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:element name="catalogus" type="TCatalogus">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified"
+	targetNamespace="urn:infosupport-com:xsd:boek-demo"
+	xmlns:tns="urn:infosupport-com:xsd:boek-demo">
+	
+	<xs:element name="catalogus" type="tns:TCatalogus">
 		<xs:annotation>
 			<xs:documentation>Comment describing your root element</xs:documentation>
 		</xs:annotation>
@@ -8,7 +13,7 @@
 	
 	<xs:complexType name="TCatalogus">
 		<xs:sequence>
-			<xs:element name="boek" type="TBoek" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="boek" type="tns:TBoek" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	
