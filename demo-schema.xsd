@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	elementFormDefault="qualified" 
-	attributeFormDefault="unqualified">
-	<xs:element name="catalogus">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="catalogus" type="TCatalogus">
 		<xs:annotation>
 			<xs:documentation>Comment describing your root element</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="boek" minOccurs="0" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="titel"></xs:element>
-						</xs:sequence>
-						<xs:attribute name="isbn" use="required" />
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>
 	</xs:element>
+	
+	<xs:complexType name="TCatalogus">
+		<xs:sequence>
+			<xs:element name="boek" type="TBoek" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="TBoek">
+		<xs:sequence>
+			<xs:element name="titel"/>
+		</xs:sequence>
+		<xs:attribute name="isbn" use="required"/>
+	</xs:complexType>
 </xs:schema>
