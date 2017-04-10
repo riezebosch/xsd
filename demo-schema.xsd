@@ -19,8 +19,9 @@
 	
 	<xs:complexType name="TBoek">
 		<xs:sequence>
-			<xs:element name="titel"/>
+			<xs:element name="titel" nillable="true" type="xs:string" />
 		</xs:sequence>
-		<xs:attribute name="isbn" use="required"/>
+		<xs:attribute name="isbn" use="required" />
+		<xs:attribute name="verschijningsdatum" type="xs:gYearMonth" />
 	</xs:complexType>
 </xs:schema>
