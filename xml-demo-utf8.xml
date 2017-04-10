@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mag dit -->
+<voorbeeld
+	extra='hiertussen kan ik m&apos;n gang gaan, maar een "dubbele" quote moet ik escapen.'
+	
+	ander="hiertussen kan ik m'n gang gaan, maar een &quot;dubbele&quot; quote moet ik escapen."
+	><!--
+	<![CDATA[Het verschil tussen < en >]]>
+	
+	--><!--Het verschil tussen &lt; en &gt;--><!--
+	
+	Past deze ß in UTF8?-->
+	<child:hallo xmlns:child="demo-van-prefix-voor-een-namespace" />
+	<child-hallo />
+	<child_hallo attr="" xml:lang="asdfl" >asdf</child_hallo>
+	<childHallo />
+	<childhallo />
+
+</voorbeeld>
