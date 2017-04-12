@@ -4,7 +4,7 @@
 	attributeFormDefault="unqualified"
 	targetNamespace="urn:infosupport-com:xsd:boek-demo"
 	xmlns:tns="urn:infosupport-com:xsd:boek-demo">
-	
+
 	<xs:element name="catalogus" type="tns:TCatalogus">
 		<xs:annotation>
 			<xs:documentation>Comment describing your root element</xs:documentation>
@@ -17,11 +17,59 @@
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:complexType name="TBoek">
+	<xs:complexType name="TBoekVolledigUitgeschreven">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element name="titel" >
+						<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="25" />
+								</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	
+	<xs:complexType name="TBoek" mixed="false">
 		<xs:sequence>
-			<xs:element name="titel" nillable="true" type="xs:string" />
+			<xs:element name="titel" nillable="true">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="taal" />
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="tns:SDFLKJSDF" maxOccurs="unbounded" />
 		</xs:sequence>
 		<xs:attribute name="isbn" use="required" />
-		<xs:attribute name="verschijningsdatum" type="xs:gYearMonth" />
+		<xs:attribute name="verschijningsdatum">
+			<xs:simpleType>
+				<xs:union memberTypes="xs:gYearMonth" />
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="aantal">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[1-9][0-9] [0-9a-zA-Z]+" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:complexType>
+	
+	<xs:element name="SDFLKJSDF" abstract="true" />
+	<xs:element name="auteur" substitutionGroup="tns:SDFLKJSDF" />
+	<xs:element name="schrijver" substitutionGroup="tns:SDFLKJSDF">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="voornaam" />
+				<xs:element name="achternaam" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

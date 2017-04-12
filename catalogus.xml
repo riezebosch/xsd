@@ -2,13 +2,27 @@
 <catalogus xmlns="urn:infosupport-com:xsd:boek-demo" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="urn:infosupport-com:xsd:boek-demo demo-schema.xsd">
-	<boek isbn="978-1-119-09660-3" verschijningsdatum="2016-04">
+	<boek isbn="978-1-119-09660-3" verschijningsdatum="2017-04">
 		<titel>Professional C# 6 and .NET Core 1.0</titel>
+		<auteur>Christian Nagel</auteur>
+		<schrijver>
+			<voornaam></voornaam>
+			<achternaam>Nagel</achternaam>
+		</schrijver>
 	</boek>
-	<boek isbn="9076174083" verschijningsdatum="1998-01">
-		<titel>Harry Potter en de Steen der Wijzen</titel>
-	</boek>
-	<boek isbn="asdf">
-		<titel xsi:nil="true" />
+	<boek isbn="9076174083" verschijningsdatum="1998-01" aantal="10 34">
+		<titel taal="NL">Harry Potter en de Steen der Wijzen</titel>
+		<auteur>J.K. Rowling</auteur>
+		<schrijver>
+			<voornaam>J.K.</voornaam>
+			<achternaam>Rowling</achternaam>
+		</schrijver>
+		<auteur>J.K. Rowling</auteur>
+		<auteur>J.K. Rowling</auteur>
+		<schrijver>
+			<voornaam>J.K.</voornaam>
+			<achternaam>Rowling</achternaam>
+		</schrijver>
+		<auteur>J.K. Rowling</auteur>
 	</boek>
 </catalogus>
